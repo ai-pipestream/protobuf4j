@@ -67,7 +67,8 @@ public final class Protobuf {
         JAVA("java"),
         KOTLIN("kotlin"),
         GRPC_JAVA("grpc-java"),
-        PYTHON("python");
+        PYTHON("python"),
+        CPP("cpp");
 
         private final String value;
 
