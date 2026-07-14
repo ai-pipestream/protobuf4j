@@ -70,7 +70,8 @@ public final class Protobuf {
         PYTHON("python"),
         CPP("cpp"),
         CSHARP("csharp"),
-        RUBY("ruby");
+        RUBY("ruby"),
+        PHP("php");
 
         private final String value;
 
