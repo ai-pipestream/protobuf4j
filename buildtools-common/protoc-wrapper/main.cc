@@ -7,7 +7,7 @@
 int main(int argc, char** argv) {
   if (argc < 2) {
     std::cerr << "Usage: " << argv[0]
-              << " <java | kotlin | grpc-java | python | cpp>\n";
+              << " <java | kotlin | grpc-java | python | cpp | csharp>\n";
     return 1;
   }
 
@@ -31,6 +31,9 @@ int main(int argc, char** argv) {
   }
   if (option == "cpp") {
     return protoc_wrapper::RunCppGenerator(argc, argv, 2);
+  }
+  if (option == "csharp") {
+    return protoc_wrapper::RunCSharpGenerator(argc, argv, 2);
   }
 
   std::cerr << "Unknown option: " << option << "\n";
