@@ -54,6 +54,12 @@ Add protobuf4j-v4 as a Maven dependency:
 | `JAVA` | `--java_out` | Java message classes |
 | `KOTLIN` | `--kotlin_out` | Kotlin DSL wrappers around Java classes |
 | `GRPC_JAVA` | `--grpc-java_out` | Java gRPC service stubs |
+| `PYTHON` | `--python_out` | Python message modules |
+| `CPP` | `--cpp_out` | C++ message classes |
+| `CSHARP` | `--csharp_out` | C# message classes |
+| `RUBY` | `--ruby_out` | Ruby message modules |
+| `PHP` | `--php_out` | PHP message classes and metadata |
+| `OBJC` | `--objc_out` | Objective-C message classes |
 
 ## Building the Project
 

@@ -3,17 +3,17 @@ package io.roastedroot.protobuf4j.common;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.dylibso.chicory.runtime.ByteArrayMemory;
-import com.dylibso.chicory.runtime.ImportValues;
-import com.dylibso.chicory.runtime.Instance;
-import com.dylibso.chicory.wasi.WasiOptions;
-import com.dylibso.chicory.wasi.WasiPreview1;
 import io.roastedroot.protobuf4j.ProtobufWrapperV4;
 import io.roastedroot.zerofs.Configuration;
 import io.roastedroot.zerofs.ZeroFs;
 import java.nio.file.FileSystem;
 import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
+import run.endive.runtime.ByteArrayMemory;
+import run.endive.runtime.ImportValues;
+import run.endive.runtime.Instance;
+import run.endive.wasi.WasiOptions;
+import run.endive.wasi.WasiPreview1;
 
 /**
  * Ensures {@link WasmCStringBuffer} is closed when the try block exits abnormally, so WASM malloc
@@ -28,12 +28,12 @@ public class WasmCStringBufferTest {
                         Configuration.unix().toBuilder().setAttributeViews("unix").build())) {
             Path workdir = fs.getPath(".");
             try (WasiPreview1 wasi =
-                            WasiPreview1.builder()
-                                    .withOptions(
-                                            WasiOptions.builder()
-                                                    .withDirectory(workdir.toString(), workdir)
-                                                    .build())
-                                    .build()) {
+                    WasiPreview1.builder()
+                            .withOptions(
+                                    WasiOptions.builder()
+                                            .withDirectory(workdir.toString(), workdir)
+                                            .build())
+                            .build()) {
                 Instance instance =
                         Instance.builder(ProtobufWrapperV4.load())
                                 .withImportValues(

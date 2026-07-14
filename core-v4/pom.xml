@@ -67,6 +67,9 @@
             <configuration>
               <name>io.roastedroot.protobuf4j.ProtobufWrapperV4</name>
               <wasmFile>${project.basedir}/../wasm/protoc-wrapper-v4.wasm</wasmFile>
+              <!-- Some libprotoc generator functions exceed the JVM method size
+                   limit; run those in the interpreter instead of failing. -->
+              <interpreterFallback>WARN</interpreterFallback>
             </configuration>
           </execution>
         </executions>
