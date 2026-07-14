@@ -71,7 +71,8 @@ public final class Protobuf {
         CPP("cpp"),
         CSHARP("csharp"),
         RUBY("ruby"),
-        PHP("php");
+        PHP("php"),
+        OBJC("objc");
 
         private final String value;
 
